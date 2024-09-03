@@ -13,7 +13,6 @@ html{
 body{
   width: 100%;
   height:100vh;
-  ${'' /* background: #a9fc03;s */}
 }
 a{
   text-decoration:none;
@@ -87,12 +86,10 @@ ${'' /* ------------ style for light theme ------------- */}
   }
   .card-container{
     box-shadow:${({theme})=> theme.colors.shadowSupport};
-  }
-  
+  }  
 }
 
 ${'' /* ------------ reusable code ------------- */}
-
 h2{
     text-transform:uppercase;
     font-size:2rem;
@@ -135,7 +132,7 @@ h3{
 }
 .grid{
   display: grid;
-}
+   }
 .grid-two-column{
   grid-template-columns: repeat(2,1fr);
 }
@@ -152,31 +149,14 @@ h3{
   left:0;
   z-index:1;
 }
-
-${'' /* ====================== shop ========*/}
-.column-item-list > li{
-  line-height: 3rem;
-  font-weight:normal;
-  cursor:pointer;
-  color:#848786;
-  font-size:1.2rem;
-}
-.column-item-list > li:hover ,
-.column-item-list > li:active {
-  color: ${({ theme })=>theme.colors.btn};
-}
-
 ${'' /* -============  sidebar style      =============== */}
-
 .sidebar-title{
- ${'' /* border:2px solid red; */}
   text-transform:Capitalize;
   font-size:2rem;
   font-weight:normal;
   margin:4rem 0 2rem 0;
 }
 .sidebar-label-container{
-${'' /* border:2px solid blue; */}
   display: block;
   padding-left: 35px;
   margin-bottom: 12px;
@@ -231,10 +211,9 @@ ${'' /* border:2px solid blue; */}
   box-shadow: .1px 1px 4px 1px rgb(245, 251, 255);
 }
 
-
+${'' /* ============ hover underline code =========== */}
 ${'' /* ======== watchcard start ========= */}
 .watch-image{
-  ${'' /* border: 2px solid orange; */}
   border-radius: .5rem .5rem 0 0;
   width:100%;
   height:100%;
@@ -250,8 +229,7 @@ ${'' /* ======== responsive code start ========= */}
 @media(max-width:${({ theme })=>theme.media.tab}){
   .header{ position:relative; }
   .navbar{
-    border:2px solid pink;
-    background:#f5e9df;
+    background:#B1ADAA;
     position:absolute;    
     top:0;
     left:0;
@@ -283,13 +261,11 @@ ${'' /* ======== responsive code start ========= */}
   .active{    
     transform: translateX(0);
     opacity: 1;
-    visibility: visible;
-    
+    visibility: visible;    
   }
   .iconMenu2{
     z-index:999;
   }
-
 }
 @media(max-width:700px){
   .icon{

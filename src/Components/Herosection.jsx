@@ -1,16 +1,13 @@
 import React from 'react';
 import { styled } from "styled-components";
 import Dealpic from '../assets/images/deals-pic.jpg';
-
 export const Herosection=()=>{
-
     return(
         <>
             <Wrapper className='herosection'>
                 <div className="dealsImage">
                 <img src={Dealpic} alt='dealpic' />
-                </div>
-                
+                </div>                
                 <div className="dealsContent">
                     <h1>todays deals</h1>
                     <h4>flat <span>50%</span> off</h4>
@@ -52,7 +49,6 @@ const Wrapper = styled.section`
         margin-top:4rem;
         font-size:3rem;
     }
-
     @media(max-width:${({ theme })=>theme.media.tab}){
         .dealsContent{
             top:8rem;
@@ -68,7 +64,6 @@ const Wrapper = styled.section`
             font-size: 2rem;
             margin-top:4rem;
         }
-
     }
     @media(max-width:${({ theme })=>theme.media.mobile}){
         .dealsContent{
@@ -99,8 +94,6 @@ const Wrapper = styled.section`
         .dealsContent p{
             margin-top:1rem;
             font-size:1.5rem;
-        }
-        
+        }        
     }
-
 `;

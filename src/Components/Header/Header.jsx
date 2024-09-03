@@ -4,9 +4,9 @@ import { Theme } from './Theme';
 import { Menu } from './Menu';
 import { Cart } from './Cart';
 import { User } from './User';
-import { IoWatch } from "react-icons/io5";
 import { styled } from "styled-components";
 import { useGlobalContext } from '../Context';
+import { Logo } from './Logo';
 
 export const Header=()=>{
     const {headerRef, placeholderRef,isSticky} = useGlobalContext();
@@ -15,9 +15,7 @@ export const Header=()=>{
         <>
             <MainHeader className='mainheader' ref={placeholderRef} >
             <div ref={headerRef} className={` ${isSticky ? 'header sticky' : 'header'}`}>
-                <div className='logo'>
-                    <h1 className='logoName'><IoWatch className='icon'/> Store</h1>
-                </div>
+                <Logo/>
                 <Navbar/>
                 <div className='icons'>
                     <User/>
@@ -30,24 +28,30 @@ export const Header=()=>{
         </>
     );
 }
-const MainHeader = styled.div`
-    
+const MainHeader = styled.div`    
     .header{
-        display: flex;
-        justify-content:space-between;
-        align-item:center;
-        padding:0 10rem;
-        line-height: 6rem;
+        display:grid;
+        grid-template-columns:repeat(7,1fr);
+        grid-gap:2rem;
         position:relative;
     }
+    .logo{
+        grid-column:2;
+    }
+    .navbar{
+        grid-column:4;
+    }
+    .icons{
+        grid-column:6;
+    }
     .sticky{
-    position: fixed;
-    width:100%;
-    left:0;
-    top: 0;
-    z-index:999;
-    box-shadow:${({theme})=> theme.colors.header_shadow};
-}
+        position: fixed;
+        width:100%;
+        left:0;
+        top: 0;
+        z-index:999;
+        box-shadow:${({theme})=> theme.colors.header_shadow};
+    }
     .logoName{
         display: flex;
         justify-content:center;
@@ -60,10 +64,13 @@ const MainHeader = styled.div`
             margin-right:10rem;
         }
     }
-    @media(max-width:700px){
-        .header{
-            padding:0 5rem;
-        }
+    @media(max-width:558px){
+        .logo{
+        grid-column:3;
+    }
+        .icons{
+        grid-column:5;
+    }
     }
 
 `;

@@ -24,6 +24,8 @@ export const App =()=>{
         fpara:'#a5a6a8',
         icon_bg:'#7a7c7d',
         footer_bg:'#0a0a0a',
+        footer_text:'#848786',
+        text_hover:'#02b6c7',
         submenu_bg:'#f7f7f7',
         shadowSupport: 'rgba(0,0,0,0.16) 0px 2px 4px',
         

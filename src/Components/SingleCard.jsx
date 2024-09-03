@@ -3,31 +3,31 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { AiFillStar } from "react-icons/ai";
 import { Button } from './styles/Button';
 import { styled } from "styled-components";
-import { Image } from './cardsComponents/Image';
-import { Reviews } from './cardsComponents/Reviews';
-import { Title } from './cardsComponents/Title';
-import { Price } from './cardsComponents/Price';
 import { NavLink } from 'react-router-dom';
 
 export const SingleCard =(props)=>{
+    const titleName = props.watchName.substring(0,30);
     
     return(
         <>
             <SingleCards className='card-container'>
                 <section className='card'>
                     <div className='card-image'>
-                        <Image imageSource={props.imageSource}/>  
+                        <img src={props.imageSource} alt='watch' className='watch-image'/>
                         <div className='heart'>
                             <IoMdHeartEmpty className='icon card-icon'/>
                         </div>
                     </div>
                     <div className='card-details'>
-                        <Title watchName={props.watchName}/>
+                        <h3 className='card-title'>
+                        {titleName.length >= 30 ? `${titleName}...` : `${titleName}`}
+                        </h3>
                         <section className='card-reviews'>
-                            <AiFillStar className='ratings-star'/><AiFillStar className='ratings-star'/><AiFillStar className='ratings-star'/><AiFillStar className='ratings-star'/><AiFillStar className='ratings-star'/>
-                            <span><Reviews watchReviews={props.watchReviews} className='total-reviews'/></span>
+                            <AiFillStar className='ratings-star'/>
+                            <p><span className='total-reviews'> {props.watchReviews}</span></p>
                         </section>
-                         <h4 className='watch-price'><Price watchPrice={props.watchPrice}/></h4>
+                        <h4 className='watch-price'>
+                            <span className='total-reviews'> {props.watchPrice}</span></h4>
                         <div>
                         <NavLink to='/WatchDetails'>
                         <Button className='btn buyNow'>buy now</Button>
@@ -44,11 +44,11 @@ const SingleCards = styled.section`
     cursor:pointer;
     box-shadow:${({theme})=> theme.colors.shadowSupport};
     background: ${({theme})=> theme.colors.contact_bg};
-
     .ratings-star{
         color: ${({theme})=> theme.colors.btn};
+        font-size:2rem;
+        margin-right:1rem;
     }
-
     .card-details{
         background: ${({theme})=> theme.colors.contact_bg};
         text-transform:capitalize;
@@ -59,7 +59,7 @@ const SingleCards = styled.section`
     }
     .card-reviews{
         padding-block:.5rem;
-        font-size:1.5rem;
+        font-size:1.2rem;
         display:flex;
         align-items:center;
     }
@@ -68,8 +68,7 @@ const SingleCards = styled.section`
         margin-bottom:1rem;     
     }
     .btn{
-        border-radius: .5rem;       
-        font-weight:600;
+        border-radius: .5rem;
         width:100%;
         margin-top:1rem;
     }
@@ -79,7 +78,7 @@ const SingleCards = styled.section`
         display:flex;
         justify-content:center;
         align-item:center;
-        padding:1.5rem;   
+        padding:1.5rem;
         background:white; 
         position:relative;
     }
@@ -92,8 +91,8 @@ const SingleCards = styled.section`
     }
     .heart{
         position:absolute;
-        right:3rem;
-        top:3rem;
+        right:2rem;
+        top:2rem;
         background:${({ theme })=>theme.colors.contact_bg};
         border-radius:50%;
         padding:.5rem;
@@ -101,5 +100,10 @@ const SingleCards = styled.section`
         display:flex;
         justify-content:center;
         tex-align:center;
+    }
+    @media(max-width:559px){
+        .buyNow{
+            font-size:1.2rem;
+        }
     }
 `;

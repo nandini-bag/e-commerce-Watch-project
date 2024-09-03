@@ -11,7 +11,6 @@ export const Footer=()=>{
         <>
             <Footers className="section section-footer">
                 <div className="container container-footer">
-                {/* <div className="container container-footer grid grid-four-column"> */}
                     <div className="footer-data f-about">
                         <h4>About</h4>
                         <p className='footer-data-para'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, veritatis?</p>
@@ -67,11 +66,32 @@ export const Footer=()=>{
     );
 }
 const Footers = styled.footer`
-${'' /* border:2px solid red; */}
 background: ${({theme})=> theme.colors.footer_bg};
 padding-block:3rem;
 
-
+.column-item-list > li{
+  line-height: 4rem;
+  font-weight:normal;
+  cursor:pointer;
+  color:${({theme})=> theme.colors.footer_text};
+  font-size:1.2rem;
+  padding-inline:.7rem;
+  position:relative;
+}
+.column-item-list > li:hover::after{
+    content:'';
+    position:absolute;
+    background:${({theme})=> theme.colors.text_hover};
+    width: .2rem;
+    height:1.5rem;
+    top:1.2rem;
+    bottom:0;
+    left:0;
+    transition:width .2s;
+}
+${'' /* .column-item-list > li:hover::after{
+    width:20%;
+} */}
 h4{
     margin-bottom: 3rem;
     font-size: 1.4rem;

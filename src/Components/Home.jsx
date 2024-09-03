@@ -1,11 +1,11 @@
-import { Watches } from './Watches';
-import { Herosection } from "./Herosection";
+import { Description } from './Description';
+import { HeroImage } from './HeroImage';
 
 export const Home=()=>{
     return(
         <>
-            <Herosection/>
-            <Watches/>
+            <HeroImage/>
+            <Description/>
         </>
     );
 }

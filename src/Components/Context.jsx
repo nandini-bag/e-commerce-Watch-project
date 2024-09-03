@@ -2,10 +2,8 @@ import  React, {useState,useContext,useEffect,useRef} from 'react';
 import "react-multi-carousel/lib/styles.css";
 
 const AppContext = React.createContext();
-
 const AppProvider=({children})=>{
-// =============================================================
-// ==============================================================
+
     const [theme, setTheme] = useState('light-theme');
     const [changeThemeIcon, setChangeThemeIcon] = useState(true);
     const [changeMenuIcon, setChangeMenuIcon] = useState(true);
@@ -19,31 +17,25 @@ const AppProvider=({children})=>{
         theme === 'dark-theme' ? setTheme('light-theme') : setTheme('dark-theme')
         setChangeThemeIcon(!changeThemeIcon);
     }
-
     // Toggle Menu   ===========
     const ToggleMenu=()=>{
         setChangeMenuIcon(!changeMenuIcon);
         setResponsiveMenu(!responsiveMenu);
     }
-
     // Toggle UserIcon   ===========
     const ToggleUser=()=>{
         setChangeUserIcon(!changeUserIcon);
-    }
-    
+    }    
     const HandleCloseBtn=()=>{
         setCloseICon(!closeIcon);
     }
-    
     // handle mouseEnter & mouseLeave  ===========
     const HandledMouseEnter=(item)=>{
         setHoveredItem(item);
     }
-
     const HandledMouseLeave=()=>{
         setHoveredItem(null);
     }
-
     const [isSticky, setIsSticky] = useState(false);
     const headerRef = useRef(null);
     const placeholderRef = useRef(null);
@@ -73,8 +65,8 @@ const AppProvider=({children})=>{
 
     
     // ============ filter menu =============== 
-    const [showFilter,setShowFilter] = useState(false);
-    const [alignCard,setAlignCard] = useState(true);
+    const [showFilter,setShowFilter] = useState(true);
+    const [alignCard,setAlignCard] = useState(false);
     
     const ToggleFilterIcon=()=>{
         setShowFilter(!showFilter);
@@ -89,12 +81,12 @@ const AppProvider=({children})=>{
           slidesToSlide: 1
         },
         tablet: {
-          breakpoint: { max: 998, min: 464 },
+          breakpoint: { max: 998, min: 497 },
           items: 1,
           slidesToSlide: 1
         },
         mobile: {
-          breakpoint: { max: 464, min: 0 },
+          breakpoint: { max: 497, min: 0 },
           items: 1,
           slidesToSlide: 1
         }
@@ -105,7 +97,7 @@ const AppProvider=({children})=>{
         {{ ToggleMode,changeThemeIcon,ToggleMenu,changeMenuIcon,ToggleUser,changeUserIcon,
            ToggleFilterIcon,showFilter,alignCard,responsiveMenu,
            HandleCloseBtn,closeIcon,hoveredItem, setHoveredItem,HandledMouseEnter,HandledMouseLeave,
-           headerRef, placeholderRef, isSticky,responsive }}>
+           headerRef, placeholderRef, isSticky,responsive}}>
             {children}
         </AppContext.Provider>
     );

@@ -11,15 +11,14 @@ import { NavLink } from 'react-router-dom';
 import { useGlobalContext } from './Context'; 
 
 import Carousel from "react-multi-carousel";
-import Luxury from '../assets/images/casio2.jpg';
+import Winner from '../assets/images/winner.jpg';
 import Analog from '../assets/images/analog-watch.jpg';
 import Casio from '../assets/images/casio1.jpg';
 import Analog2 from '../assets/images/analog2.jpg';
 import Gift from '../assets/images/gift.jpg';
-import Digital from '../assets/images/digital-watch1.jpg';
-import Smart from '../assets/images/smart-watches.jpg';
-import Smart2 from '../assets/images/analog1.jpg';
-
+import Digital from '../assets/images/business.jpg';
+import Smart from '../assets/images/smartWatch.jpg';
+import iwcWatch from '../assets/images/iwc..jpg';
 
 
 export const Shop=()=>{
@@ -34,7 +33,7 @@ export const Shop=()=>{
                           transitionDuration={500}
                           className='carousel'>
                     <div className='slide-img'>
-                        <img src={Luxury} alt='Luxury Watch image'/>
+                        <img src={Winner} alt='Luxury Watch image'/>
                         <div className='overlay-analog'>
                             <h2>luxury watch</h2>
                             <p>Lorem ipsum dolor icing elit.maxime consequuntur maiores reiciendis vero placeat quia itaque!</p>
@@ -107,7 +106,7 @@ export const Shop=()=>{
                     <div className='slide-img'>
                         <img src={Smart} alt='smart watch image'/>
                         <div className='overlay-analog'>
-                            <h2>smart watch</h2>
+                            <h2>smart watch..</h2>
                             <p>Lorem ipsum dolor sit amet  quaerat maxime consequuntur maiores reiciendis vero placeat quia itaque!</p>
                             <div className='slider-btn'>
                             <NavLink to='/*'>
@@ -117,9 +116,9 @@ export const Shop=()=>{
                         </div>
                     </div>
                     <div className='slide-img'>
-                        <img src={Smart2} alt='smart watch2 image'/>
+                        <img src={iwcWatch} alt='smart watch2 image'/>
                         <div className='overlay-analog'>
-                            <h2>Tissot watch</h2>
+                            <h2>iwc-Portuguese watch</h2>
                             <p>Discover the latest additions to the Tissot collection and find the perfect timepiece, to wear or to gift.</p>
                             <div className='slider-btn'>
                             <NavLink to='/*'>
@@ -190,7 +189,7 @@ export const Shop=()=>{
     );
 }
 const Wrapper = styled.section`
-border:2px solid magenta;
+
 .slide-img{
     height:100%;
     position:relative;
@@ -222,7 +221,6 @@ border:2px solid magenta;
     text-align:center;
 }
 .slide-img img{
-    border:2px solid brown;
     width:100%;
     height:80%;
     object-fit:cover;

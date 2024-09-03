@@ -11,17 +11,17 @@ export const Card =()=>{
             <Cards>
             <div className={`cards-container container grid grid-four-column ${alignCard ? 'align' : ''}`}>
             {customData.map((celm)=>{
+                const {id,img,title,reviews,price,company,color,category} = celm;
                 return(
                     <SingleCard
-                        key={celm.id}
-                        imageSource={celm.img}
-                        watchName={celm.title}
-                        watchReviews={celm.reviews}
-                        watchPrice={celm.price}
-                        watchCompany={celm.company}
-                        watchColor={celm.color}
-                        watchCategory={celm.category}
-                    />
+                        key={id}
+                        imageSource={img}
+                        watchName={title}
+                        watchReviews={reviews}
+                        watchPrice={price}
+                        watchCompany={company}
+                        watchColor={color}
+                        watchCategory={category} />
                 )
             })}
             </div>
@@ -37,11 +37,7 @@ const Cards = styled.div`
     .cards-container{
         padding: 2rem;
         display: grid;
-        grid-template-columns: repeat(auto-fill,minmax(20rem,1fr));
+        grid-template-columns: repeat(auto-fill,minmax(25rem,1fr));
         gap:2.5rem;
-    } 
-    @media(max-width:505px){
-        display: grid;
-        grid-template-columns: repeat(auto-fill,minmax(15rem,1fr));
     } 
 `;

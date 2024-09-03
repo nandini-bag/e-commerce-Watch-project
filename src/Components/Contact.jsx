@@ -12,7 +12,7 @@ export const Contact=()=>{
 
                 <div className="section-contact-main contact-container ">
                     <form>
-                        <div className=" grid grid-two-column">
+                        <div className=" userName grid grid-two-column">
                             <div>
                                 <label></label>
                                 <input type="text" name="username" 
@@ -38,32 +38,29 @@ export const Contact=()=>{
                                       rows="10" cols="30" placeholder="write your message" 
                                       required autoComplete="off"></textarea>
                         </div>
-                        <div>
+                        <div className='contact-btn'>
                             <label></label>
-                            <Button className="btn">send message</Button>   
+                            <Button className="btn ">send message</Button>   
                         </div>
-
                     </form>
                 </div>
 
                 <div className='contact-map'>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.6254426477276!2d77.69382617425477!3d12.99579191434911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae110b04a3be4b%3A0xcffb252dab2e9643!2sPhoenix%20Marketcity!5e0!3m2!1sen!2sin!4v1720345572454!5m2!1sen!2sin" 
                 width="600" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                
+                </div>                
             </Wrapper> 
         </>
     );
 }
 const Wrapper = styled.section`
-    ${'' /* border: 2px solid red;   */}
     background: ${({theme})=> theme.colors.contact_bg};  
 
     .section-contact-main{
-    ${'' /* border: 2px solid blue; */}
     max-width: 60rem;
     margin: 0 auto;
     transition: all .3s linear;
+    padding: 2rem;
 }
 .section-contact-main .grid{
     gap: 2rem;
@@ -72,7 +69,6 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-bottom:5rem;
 }
 .section-contact-main input,
 .section-contact-main textarea{
@@ -87,6 +83,10 @@ const Wrapper = styled.section`
 }
 .section-contact-main input[type="submit"]{
     border: none;
+}
+.contact-btn{
+    display:flex;
+    justify-content:right;
 }
 .contact-map{
     overflow: hidden;

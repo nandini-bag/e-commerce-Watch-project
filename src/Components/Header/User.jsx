@@ -16,9 +16,10 @@ export const User=()=>{
 }
 const UserIcons = styled.div`
     display:inline;
-    @media(max-width:700px){
+    @media(max-width:558px){
         Button{
-            font-size:1.2rem;
+            font-size:1rem;
+            padding: 1rem;
         }
         
     }

@@ -12,7 +12,7 @@ export const Sidebars=()=>{
     return(
         <>
             <Section>
-            <div className= {`sidebar-content ${showFilter ? 'hide' : 'show'}`}>
+            <div className= {`sidebar-content ${showFilter ? 'show' : 'hide'}`}>
             <Category/>
             <Price/>
             <Color/>
@@ -32,14 +32,14 @@ const Section = styled.section`
     .hide{
         transform: translateY(0);
         opacity: 1;
-        visibility: hidden;
+        visibility: visible;
         transition: all .1s linear;       
         position:relative;
     }
     .show{
         transform: translateX(0);
         opacity: 1;
-        visibility: visible;
+        visibility: hidden;
         transition: all .1s linear;       
         position:relative;
     }
