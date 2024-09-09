@@ -34,45 +34,35 @@ export const Search=()=>{
     );
 }
 const Searchs = styled.div`
-    width:inherit;
     display:grid;
-    grid-template-columns:repeat(5,1fr);
+    grid-template-columns:1fr 1fr;
     grid-gap:2rem;
-    gap:3rem;
-    justify-items: center;
+    padding-inline:5rem;
+    padding-block:2rem;
+    justify-items: right;
     text-transform:capitalize;
-    font-size:2rem;
-    .filter-menu-container{
-        position:relative;
-    }
+    position:relative;
+    margin-top:2rem;
 
  ${'' /* ============= filter-menu-container ============== */}
     .filter-div,
     .search-div {
         display:flex;
-        justify-content:left;
         align-item:center;
         gap:1rem;
-        line-height:14rem;
-    }
-    .search-div{
-        grid-column:2;
-    }
-    .filter-div{
-        grid-column:4;
+        line-height:5rem;
     }
     form{
         position:relative;
     }
     input{
-        width:45rem;
+        width:50rem;
         background: #f0edeb; 
         border: .1rem solid #c9c9c9;
         border-radius: .5rem;
         outline:none;
         height: 3.5rem;
         padding-inline: 2rem;
-        font-size: 1.4rem;
         text-transform: capitalize;
     }
     p{    
@@ -80,13 +70,13 @@ const Searchs = styled.div`
     }
     .search-btn{
         position:absolute;
-        top:5.4rem;
+        top:.5rem;
         right:0;
     }
     .search-icon{
         color:white;
-        font-size:1.2rem;
-        margin-inline:1rem;
+        font-size:1.1rem;
+        margin-inline:.5rem;
     }
     .filter-icon{
         height:inherit;
@@ -96,30 +86,38 @@ const Searchs = styled.div`
  @media(max-width:${({ theme })=>theme.media.tab}){  
     input{
        width: 40rem;
-       font-size: 1.4rem;
+       font-size: 1.3rem;
     }
-}
-@media(max-width:${({ theme })=>theme.media.mobile}){
-    margin-right:10rem;
-    input{
-        width: 35rem;
-        font-size: 1.3rem;
+    p{    
+        font-size: 1.5rem;
+    } 
+    .filter-icon{
+        font-size:2rem;
     }   
-   .filter-div{
-        justify-content:right;
-    }     
 }
-@media(max-width:700px){
-    input{
-        width: 30rem;
-    }    
-}
-@media(max-width:558px){
-    .logo{
-        grid-column:3;
+@media(max-width:700px){ 
+       justify-items:left;
+       grid-gap:0;
+    .search-btn{
+        top:.5rem;
+        right:0;
     }
-    .icons{
-        grid-column:5;
+    .filter-div{
+       grid-column:span 2;
+    }
+}
+@media(max-width:546px){
+    input{
+       width: 28rem;
+       height:3rem;
+    }
+    .search-icon{
+        font-size:1rem;
+        margin-inline:1rem;
+    }
+    .search-btn{
+        top:.5rem;
+        right:0;
     }
 }
 `;

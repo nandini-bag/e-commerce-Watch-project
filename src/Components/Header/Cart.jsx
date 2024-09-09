@@ -16,17 +16,14 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-item:center;
     gap:1rem;
-    .cart-icon{
-        font-size: 2rem;
-    }
+    .cart-icon{ font-size: 2rem;  }
     @media(max-width:700px){
-        .cart-icon{
-            font-size: 1.8rem;
+        .cart-icon{ 
+            font-size: 1.8rem; 
         }
-
     }
     @media(max-width:550px){
-        .icon{
+        .icon{ 
             opacity: 0; 
             display:none;
         }

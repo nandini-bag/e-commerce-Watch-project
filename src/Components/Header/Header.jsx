@@ -3,7 +3,6 @@ import { Navbar } from './Navbar';
 import { Theme } from './Theme';
 import { Menu } from './Menu';
 import { Cart } from './Cart';
-import { User } from './User';
 import { styled } from "styled-components";
 import { useGlobalContext } from '../Context';
 import { Logo } from './Logo';
@@ -13,12 +12,11 @@ export const Header=()=>{
     
     return(
         <>
-            <MainHeader className='mainheader' ref={placeholderRef} >
-            <div ref={headerRef} className={` ${isSticky ? 'header sticky' : 'header'}`}>
+            <MainHeader className={`mainheader ${isSticky ? 'sticky' : ''}`} ref={placeholderRef} >
+            <div ref={headerRef} className='header'>
                 <Logo/>
                 <Navbar/>
                 <div className='icons'>
-                    <User/>
                     <Cart/>
                     <Theme/>
                     <Menu/>
@@ -28,12 +26,14 @@ export const Header=()=>{
         </>
     );
 }
-const MainHeader = styled.div`    
+const MainHeader = styled.div`
+    .mainHeader{
+        position:relative;
+    }   
     .header{
         display:grid;
         grid-template-columns:repeat(7,1fr);
         grid-gap:2rem;
-        position:relative;
     }
     .logo{
         grid-column:2;
@@ -47,7 +47,6 @@ const MainHeader = styled.div`
     .sticky{
         position: fixed;
         width:100%;
-        left:0;
         top: 0;
         z-index:999;
         box-shadow:${({theme})=> theme.colors.header_shadow};
@@ -60,17 +59,11 @@ const MainHeader = styled.div`
         line-height:6.5rem;
     }
     @media(max-width:${({ theme })=>theme.media.tab}){
-        .logo{
-            margin-right:10rem;
-        }
+        .logo{ margin-right:10rem; }        
     }
     @media(max-width:558px){
-        .logo{
-        grid-column:3;
+        .logo{ grid-column:3; }
+        .icons{ grid-column:5; }
+        .logoName{ font-size:1.5rem; }
     }
-        .icons{
-        grid-column:5;
-    }
-    }
-
 `;

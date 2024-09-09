@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from "./Components/Header/Header";
 import { Home } from "./Components/Home";
-import { Shop } from "./Components/Shop";
+import { Shop } from './Components/Shop/Shop';
 import { Watches } from './Components/Watches';
 import { Contact } from "./Components/Contact";
 import { Footer } from "./Components/Footer";
@@ -15,7 +15,7 @@ export const App =()=>{
   const theme={
     colors:{
         main_heading: '#f0f0f0',
-        white: '#fff',
+        white: '#F4F1EE',
         black: '#242424',
         bg: '#f9f9ff',
         darkbg: '#2e3336',
@@ -37,6 +37,7 @@ export const App =()=>{
         shadow: 'rgba(0,0,0,0.2) 0px 1px 3px 0px, rgba(27,31,35,0.15), 0px 0px 0px 1px',
         btn_shadow: 'inset rgba(0,0,0,0.16) 0 4px 5px',
         header_shadow: '0 1px 2px 2px rgba(0,0,0,0.1)',
+        navbar_shadow: '0 10px 18px 25px rgba(0,0,0,0.2)',
     },
     media:{ mobile:'768px', tab: '998px', }
 }

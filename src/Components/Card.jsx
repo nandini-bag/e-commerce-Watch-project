@@ -40,4 +40,10 @@ const Cards = styled.div`
         grid-template-columns: repeat(auto-fill,minmax(25rem,1fr));
         gap:2.5rem;
     } 
+    @media(max-width:708px){
+    .cards-container{
+        grid-template-columns: repeat(auto-fill,minmax(18rem,1fr));
+        gap:2.5rem;
+    } 
+    }
 `;

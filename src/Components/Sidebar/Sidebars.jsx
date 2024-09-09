@@ -43,13 +43,4 @@ const Section = styled.section`
         transition: all .1s linear;       
         position:relative;
     }
-    .show:after{
-        content:'';
-        position:absolute;
-        top: -1.5rem;
-        right:0;
-        width:.1rem;
-        height:85rem;
-        background:${({theme})=> theme.colors.contact_bg};
-    }
 `;

@@ -1,83 +1,72 @@
-import { NavLink } from "react-router-dom";
-import { Button } from "./styles/Button";
-import Over from '../assets/images/round-silver.jpg';
-import styled from 'styled-components'; 
+// import { NavLink } from "react-router-dom";
+// import { Button } from "./styles/Button";
+// import Over from '../assets/images/round-silver.jpg';
+import styled from 'styled-components';
 
 export const HeroImage=()=>{
     return(
         <>
-            <Wrapper className="section">
-                <img src={Over} alt='hero-image'/>
-                <div className="hero-content">
-                <h2>great collection of luxury watches</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere eos neque laborum eaque nam ipsum.</p>
-                <NavLink to='/shop'><Button className="btn hero-btn">Explore more</Button></NavLink>
-                </div>     
+            <Wrapper className='section'>
+                <h2 className='section-header'>amazing collection of <span>luxury watches </span></h2>
             </Wrapper>
         </>
     );
 }
 const Wrapper = styled.div`
-img{
-    width:100%;
-    object-fit: cover;
-    text-align:center;
-    position:relative;
+width:100%;
+padding-inline:20rem;
+margin-top:5rem;
+line-height:5rem;
+display:flex;
+justify-content:center;
+align-item:center;
+
+.section-header{
+    text-transform:capitalize;
+    font-size:3.5rem;
+    word-spacing:.8rem;
+    
+    padding:1rem;
 }
-.hero-content{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    display:flex;
-    justify-content:center;
-    align-item:center;
-    flex-direction:column;
-    text-align:center;
-}
-.hero-content h2{
+.section-header span{
     font-size:4rem;
-    font-weight:700;
-    color:${({theme})=> theme.colors.main_heading};
-    margin-bottom:5rem;
-}
-p{
-    font-size:1.5rem;
-    color:#fff;
-    margin-block: 3rem;
-    font-weight:500;
+    font-weight:800;
+    color:${({theme})=> theme.colors.btn};
 }
 @media(max-width:${({ theme })=>theme.media.tab}){ 
-    .hero-content h2{
-    font-size:3rem;
-    margin-bottom:3rem;
+    padding:4rem 10rem;
+    .section-header{
+        font-size:2.5rem;
+    }
+    .section-header span{
+        font-size:3rem;
     }
 }
 @media(max-width:${({ theme })=>theme.media.mobile}){ 
-    .hero-content h2{
-    font-size:2rem;
-    margin-bottom:0;
+    padding:2rem 10rem;
+    margin-top:2rem;
+    line-height:4rem;
+    .section-header{
+        font-size:2.2rem;
     }
-p{
-    font-size:1rem;
-    margin-block: 2rem;
-}
+    .section-header span{
+        font-size:2.5rem;
+    }
 
 }
-@media(max-width:640px){ 
-    .hero-content h2{
-    font-size:1.5rem;
+@media(max-width:558px){
+    padding:2rem 6rem;
+    .section-header{
+        font-size:2rem;
+    }
+    .section-header span{
+        font-size:2.2rem;
     }
 }
-@media(max-width:558px){
-    .hero-content{
-    top:40%;
-    left:40%;
-    transform:translate(-40%,-40%);
+@media(max-width:425px){
+    padding:0 6rem;
+    .section-header{
+        font-size:1.8rem;
     }
-        Button{
-            font-size:1rem;
-            padding: 1rem;
-        }
 }
 `;

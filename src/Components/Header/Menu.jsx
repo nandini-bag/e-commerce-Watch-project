@@ -34,27 +34,27 @@ const MenuIcons = styled.div`
     .change{
         opacity: 1;
         visibility: visible;
+        display:block;
         pointer-events: auto;
-        transition: all .1s linear;
+        transition: all .1s linear;        
     }
     .unchange{
         opacity: 0;
         visibility: hidden;
+        display:none;
         pointer-events: auto;
         transition: all .1s linear;
     }
 
-    ${'' /* ------- responsive code for mobile menu icons -------- */}
-    
+    ${'' /* ------- responsive code for mobile menu icons -------- */}    
 
-    ${'' /* //998px */}
 @media (max-width:${({ theme })=> theme.media.tab}){
 
-        ${'' /* ------- show mobile menu icons -------- */}
-        opacity: 111;
-        visibility: visible;
-        pointer-events: auto;
-        transition: all .1s linear;
+    ${'' /* ------- show mobile menu icons -------- */}
+    opacity: 111;
+    visibility: visible;
+    pointer-events: auto;
+    transition: all .1s linear;        
 }
 @media(max-width:700px){
     .icon{

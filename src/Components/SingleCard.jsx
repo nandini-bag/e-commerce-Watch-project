@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoMdHeartEmpty } from "react-icons/io";
-import { AiFillStar } from "react-icons/ai";
+// import { AiFillStar } from "react-icons/ai";
 import { Button } from './styles/Button';
 import { styled } from "styled-components";
 import { NavLink } from 'react-router-dom';
@@ -23,7 +23,7 @@ export const SingleCard =(props)=>{
                         {titleName.length >= 30 ? `${titleName}...` : `${titleName}`}
                         </h3>
                         <section className='card-reviews'>
-                            <AiFillStar className='ratings-star'/>
+                            {/* <AiFillStar className='ratings-star'/> */}
                             <p><span className='total-reviews'> {props.watchReviews}</span></p>
                         </section>
                         <h4 className='watch-price'>
@@ -91,7 +91,7 @@ const SingleCards = styled.section`
     }
     .heart{
         position:absolute;
-        right:2rem;
+        right:2rem; 
         top:2rem;
         background:${({ theme })=>theme.colors.contact_bg};
         border-radius:50%;

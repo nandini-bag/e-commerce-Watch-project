@@ -7,7 +7,7 @@ export const User=()=>{
     return(
         <>
             <UserIcons className='userdiv'>
-            <NavLink to='/signup' className='navbar-link'>
+            <NavLink to='/signup'>
             <Button>SignUp</Button>
             </NavLink>
             </UserIcons>
@@ -20,7 +20,6 @@ const UserIcons = styled.div`
         Button{
             font-size:1rem;
             padding: 1rem;
-        }
-        
+        }        
     }
 `;

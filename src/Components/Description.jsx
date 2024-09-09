@@ -24,14 +24,14 @@ export const Description=()=>{
                         </div>
                         <div className='text'>
                         <h2>perfect <span>watch</span> at perfect timing</h2>
-                        <h3>Lorem ipsum dolor sit amet consectetur itaque similique aperiam, rerum iste? Fuga, quod expedita omnis repudiandae adipisci ipsa qui repellat deleniti eaque suscipit iste praesentium, voluptatum accusantium.</h3>
+                        <h3>Lorem ipsum dolor sit amet consectetur itaque similique aperiam, rerum iste? Fuga, quod expedita omnis praesentium, voluptatum accusantium.</h3>
                         </div>
                     </div>
 
                     <div className='section section-layout'>
                         <div className='text'>
                         <h2>gift to your favorite one</h2>
-                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima eveniet tenetur ullam at impedit quasi dolorum ipsum, voluptas eum ex commodi vitae? Nobis quis laudantium voluptate. Sapiente soluta dolorem quae.</h3>
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima commodi vitae? Nobis quis laudantium voluptate. Sapiente soluta dolorem quae.</h3>
                         </div>
                         <div className='img'>
                         <img src={Crop} alt='watch-img'/>
@@ -44,9 +44,9 @@ export const Description=()=>{
                         </div>
                         <div className='text'>
                         <h2>sonata <span>watch</span></h2>
-                        <h4>Sonata Wedding Silver Dial Women Watch .Lorem ipsum dolor sit amet 
+                        <h3>Sonata Wedding Silver Dial Women Watch .Lorem ipsum dolor sit amet 
                         consectetur adipisicing elit. Cumque unde quibusdam facere, reiciendis pariatur
-                            ut vel ad, totam cumque tempora impedit amet labore aperiam.</h4>
+                         aperiam.</h3>
                         </div>
                     </div>
                 </div>
@@ -80,6 +80,7 @@ const Wrapper = styled.div`
     align-items:center;
     flex-direction:column;
     gap:5rem;
+    text-align:justify;
     position:relative;
     z-index:1;
 }

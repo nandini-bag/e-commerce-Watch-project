@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { styled } from "styled-components";
 import { useGlobalContext } from '../Context';
+import { User } from './User';
 
 export const Navbar=()=>{
     const { responsiveMenu } = useGlobalContext();
@@ -18,26 +19,24 @@ export const Navbar=()=>{
                         <NavLink to='/watches' className='navbar-link'>Watches</NavLink>
                     </li>
                     <li className="navbar-parent-list"><NavLink to='/contact' className='navbar-link'>Contact</NavLink></li>                   
+                    <li className="navbar-parent-list"><NavLink to='/*'><User/></NavLink></li>                   
+                                     
                 </ul>
             </Nav>
         </>
     );
 }
 const Nav = styled.nav`
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    gap:2rem;
     .nav-list{
         display: flex;
-        gap: 4rem;
-        list-style: none;
+        justify-content:center;
+        align-items:center;
+        gap:4rem;
     }
     .navbar-parent-list{
-        line-height:6rem;
+        line-height:5rem;
     }
     .navbar-link{
-        color:black;
         position: relative;
     }
     .navbar-link:link, .navbar-link:visited{
@@ -58,9 +57,6 @@ const Nav = styled.nav`
         bottom:0;
         left:0;
         transition:width .2s;
-    }
-    .navbar-link:active{
-        color:#02b6c7;
     }
     .navbar-link:hover::after{
         width:100%;
